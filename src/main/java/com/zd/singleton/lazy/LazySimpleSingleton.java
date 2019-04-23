@@ -9,7 +9,8 @@ public class LazySimpleSingleton {
 
     private LazySimpleSingleton() {}
 
-    public static LazySimpleSingleton getInstance(){
+    //JDK1.6后对synchronized 优化了很多，但是还是存在一定的性能问题
+    public synchronized static LazySimpleSingleton getInstance(){
         if(null == lazySingleton) {
             lazySingleton = new LazySimpleSingleton();
         }
