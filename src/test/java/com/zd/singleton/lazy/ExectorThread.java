@@ -6,7 +6,9 @@ package com.zd.singleton.lazy;
 public class ExectorThread implements Runnable{
     @Override
     public void run() {
-        LazySimpleSingleton singleton = LazySimpleSingleton.getInstance();
+//        LazySimpleSingleton singleton = LazySimpleSingleton.getInstance();
+        LazyDoubleCheckSingleton singleton = LazyDoubleCheckSingleton.getInstance();
         System.err.println(Thread.currentThread() + "" + singleton);
+
     }
 }
